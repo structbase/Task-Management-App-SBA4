@@ -13,84 +13,90 @@
         <title>Task Management</title>
     </head>
     <body>
-        <div class="container">
-            <h1 id="form-title">Task Management</h1>
+        <div class="container ">
+            <h1 id="form-title" class="">Task Management</h1>
 
-            <form id="task-form" aria-labelledby="form-title" class="row g-3">
-                <!-- Task name -->
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="task-name"
-                            name="taskName"
-                            placeholder="Enter task name"
-                            aria-required="true"
-                        />
-                        <label for="task-name">Task Name</label>
+            <div>
+                <form
+                    id="task-form"
+                    aria-labelledby="form-title"
+                    class="row g-3"
+                >
+                    <!-- Task name -->
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="task-name"
+                                name="taskName"
+                                placeholder="Enter task name"
+                                aria-required="true"
+                            />
+                            <label for="task-name">Task Name</label>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Category -->
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="category"
-                            name="category"
-                            placeholder="Enter category"
-                            aria-required="true"
-                        />
-                        <label for="category">Category</label>
+                    <!-- Category -->
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="category"
+                                name="category"
+                                placeholder="Enter category"
+                                aria-required="true"
+                            />
+                            <label for="category">Category</label>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Deadline (now using form‑floating) -->
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <input
-                            type="datetime-local"
-                            class="form-control"
-                            id="deadline"
-                            name="deadline"
-                            aria-required="true"
-                        />
-                        <label for="deadline">Deadline</label>
+                    <!-- Deadline (now using form‑floating) -->
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                type="datetime-local"
+                                class="form-control"
+                                id="deadline"
+                                name="deadline"
+                                aria-required="true"
+                            />
+                            <label for="deadline">Deadline</label>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Status -->
-                <div class="col-md-6">
-                    <div class="form-floating">
-                        <select
-                            class="form-select"
-                            id="select-status"
-                            name="status"
-                            aria-required="true"
+                    <!-- Status -->
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <select
+                                class="form-select"
+                                id="select-status"
+                                name="status"
+                                aria-required="true"
+                            >
+                                <option value="">Select status</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="overdue">Overdue</option>
+                            </select>
+                            <label for="select-status">Status</label>
+                        </div>
+                    </div>
+
+                    <!-- Add button -->
+                    <div class="col-12">
+                        <button
+                            type="button"
+                            id="add-task-btn"
+                            class="btn btn-primary"
+                            aria-label="Add task"
                         >
-                            <option value="">Select status</option>
-                            <option value="in-progress">In Progress</option>
-                            <option value="completed">Completed</option>
-                            <option value="overdue">Overdue</option>
-                        </select>
-                        <label for="select-status">Status</label>
+                            Add Task
+                        </button>
                     </div>
-                </div>
-
-                <!-- Add button -->
-                <div class="col-12">
-                    <button
-                        type="button"
-                        id="add-task-btn"
-                        class="btn btn-primary"
-                        aria-label="Add task"
-                    >
-                        Add Task
-                    </button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
 
         <!-- Task List Table -->
