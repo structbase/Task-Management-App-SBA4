@@ -9,39 +9,6 @@ const tableBody = document.querySelector("#task-table tbody");
 
 const tasks = [];
 
-// Click event listener on the addTaskBtn
-addTaskBtn.addEventListener("click", () => {
-    // Create a task object
-    const task = {
-        taskName: taskName.value.trim(),
-        category: category.value.trim(),
-        deadline: deadline.value,
-        status: status.value,
-    };
-
-    // Simple validation
-    if (!task.taskName || !task.category || !task.deadline || !task.status) {
-        alert("Please fill out all fields.");
-        return;
-    }
-
-    // Add to tasks array
-    tasks.push(task);
-
-    // Reset form
-    taskForm.reset();
-
-    // Re-render table
-    renderTasks();
-
-    // check overdue
-    checkOverdue();
-    
-    // debug helps
-    console.log("New task added:", task);
-    console.log("All tasks:", tasks);
-});
-
 // Function to render all tasks in the table
 function renderTasks() {
     tableBody.innerHTML = ""; // clear table
@@ -98,3 +65,36 @@ function checkOverdue() {
         }
     });
 }
+
+// Click event listener on the addTaskBtn
+addTaskBtn.addEventListener("click", () => {
+    // Create a task object
+    const task = {
+        taskName: taskName.value.trim(),
+        category: category.value.trim(),
+        deadline: deadline.value,
+        status: status.value,
+    };
+
+    // Simple validation
+    if (!task.taskName || !task.category || !task.deadline || !task.status) {
+        alert("Please fill out all fields.");
+        return;
+    }
+
+    // Add to tasks array
+    tasks.push(task);
+
+    // Reset form
+    taskForm.reset();
+
+    // Re-render table
+    renderTasks();
+
+    // check overdue
+    checkOverdue();
+
+    // debug helps
+    console.log("New task added:", task);
+    console.log("All tasks:", tasks);
+});
