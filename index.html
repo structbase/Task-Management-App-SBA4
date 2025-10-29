@@ -1,65 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Management</title>
-</head>
-<body>
-    <h1 id="form-title">Task Management</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task Management</title>
+    </head>
+    <body>
+        <h1 id="form-title">Task Management</h1>
 
-    <form id="task-form" aria-labelledby="form-title">
-        <div>
-            <label for="task-name">Task Name</label>
-            <input 
-                type="text" 
-                id="task-name" 
-                name="taskName" 
-                placeholder="Enter task name" 
-                aria-required="true" 
-            />
-        </div>
+        <form id="task-form" aria-labelledby="form-title">
+            <div>
+                <label for="task-name">Task Name</label>
+                <input
+                    type="text"
+                    id="task-name"
+                    name="taskName"
+                    placeholder="Enter task name"
+                    aria-required="true"
+                />
+            </div>
 
-        <div>
-            <label for="category">Category</label>
-            <input 
-                type="text" 
-                id="category" 
-                name="category" 
-                placeholder="Enter category" 
-                aria-required="true" 
-            />
-        </div>
+            <div>
+                <label for="category">Category</label>
+                <input
+                    type="text"
+                    id="category"
+                    name="category"
+                    placeholder="Enter category"
+                    aria-required="true"
+                />
+            </div>
 
-        <div>
-            <label for="deadline">Deadline</label>
-            <input 
-                type="datetime-local" 
-                id="deadline" 
-                name="deadline" 
-                aria-required="true" 
-            />
-        </div>
+            <div>
+                <label for="deadline">Deadline</label>
+                <input
+                    type="datetime-local"
+                    id="deadline"
+                    name="deadline"
+                    aria-required="true"
+                />
+            </div>
 
-        <div>
-            <label for="select-status">Status</label>
-            <select 
-                id="select-status" 
-                name="status" 
-                aria-required="true"
-                aria-describedby="status-help"
-            >
-                <option value="">Select status</option>
-                <option value="in-progress">In Progress</option>
-                <option value="completed">Completed</option>
-                <option value="overdue">Overdue</option>
-            </select>
-        </div>
+            <div>
+                <label for="select-status">Status</label>
+                <select
+                    id="select-status"
+                    name="status"
+                    aria-required="true"
+                    aria-describedby="status-help"
+                >
+                    <option value="">Select status</option>
+                    <option value="In-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+            </div>
 
-        <div>
-            <button type="button" id="add-task-btn" aria-label="Add task">Add Task</button>
-        </div>
-    </form>
-    <script src="./index.js"></script>
-</body>
+            <div>
+                <button type="button" id="add-task-btn" aria-label="Add task">
+                    Add Task
+                </button>
+            </div>
+        </form>
+
+        <!-- Task List Table -->
+        <h2>Task List</h2>
+        <table id="task-table" aria-label="Task List">
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Deadline</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--JS Inserted here-->
+            </tbody>
+        </table>
+
+        <script src="./index.js"></script>
+    </body>
 </html>
