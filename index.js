@@ -43,14 +43,44 @@ addTaskBtn.addEventListener("click", () => {
 function renderTasks() {
     tableBody.innerHTML = ""; // clear table
 
-    tasks.forEach(task => {
+    tasks.forEach((task, index) => {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${task.taskName}</td>
             <td>${task.category}</td>
-            <td>${task.status}</td>
+            <td>
+                <select data-index="${index}" class="status-select">
+                    <option value="in-progress" ${
+                        task.status === "in-progress" ? "selected" : ""
+                    }>In Progress</option>
+                    <option value="completed" ${
+                        task.status === "completed" ? "selected" : ""
+                    }>Completed</option>
+                    <option value="overdue" ${
+                        task.status === "overdue" ? "selected" : ""
+                    }>Overdue</option>
+                </select>
+            </td>
             <td>${task.deadline}</td>
+            <td><button data-index="${index}" class="delete-btn">Delete</button></td>
         `;
         tableBody.appendChild(row);
+    });
+    // Add listeners for status dropdowns
+    document.querySelectorAll(".status-select").forEach((select) => {
+        select.addEventListener("change", (e) => {
+            const i = e.target.getAttribute("data-index");
+            tasks[i].status = e.target.value;
+            renderTasks(); // re-render after change
+        });
+    });
+
+    // Add listeners for delete buttons
+    document.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const i = e.target.getAttribute("data-index");
+            tasks.splice(i, 1);
+            renderTasks();
+        });
     });
 }
