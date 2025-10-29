@@ -3,85 +3,118 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="./index.js" />
         <title>Task Management</title>
     </head>
     <body>
-        <h1 id="form-title">Task Management</h1>
+        <div class="container">
+            <h1 id="form-title">Task Management</h1>
 
-        <form id="task-form" aria-labelledby="form-title">
-            <div>
-                <label for="task-name">Task Name</label>
-                <input
-                    type="text"
-                    id="task-name"
-                    name="taskName"
-                    placeholder="Enter task name"
-                    aria-required="true"
-                />
-            </div>
+            <form id="task-form" aria-labelledby="form-title" class="row g-3">
+                <!-- Task name -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="task-name"
+                            name="taskName"
+                            placeholder="Enter task name"
+                            aria-required="true"
+                        />
+                        <label for="task-name">Task Name</label>
+                    </div>
+                </div>
 
-            <div>
-                <label for="category">Category</label>
-                <input
-                    type="text"
-                    id="category"
-                    name="category"
-                    placeholder="Enter category"
-                    aria-required="true"
-                />
-            </div>
+                <!-- Category -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="category"
+                            name="category"
+                            placeholder="Enter category"
+                            aria-required="true"
+                        />
+                        <label for="category">Category</label>
+                    </div>
+                </div>
 
-            <div>
-                <label for="deadline">Deadline</label>
-                <input
-                    type="datetime-local"
-                    id="deadline"
-                    name="deadline"
-                    aria-required="true"
-                />
-            </div>
+                <!-- Deadline (now using form‑floating) -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <input
+                            type="datetime-local"
+                            class="form-control"
+                            id="deadline"
+                            name="deadline"
+                            aria-required="true"
+                        />
+                        <label for="deadline">Deadline</label>
+                    </div>
+                </div>
 
-            <div>
-                <label for="select-status">Status</label>
-                <select
-                    id="select-status"
-                    name="status"
-                    aria-required="true"
-                    aria-describedby="status-help"
-                >
-                    <option value="">Select status</option>
-                    <option value="In-progress">In Progress</option>
-                    <option value="completed">Completed</option>
-                    <option value="overdue">Overdue</option>
-                </select>
-            </div>
+                <!-- Status -->
+                <div class="col-md-6">
+                    <div class="form-floating">
+                        <select
+                            class="form-select"
+                            id="select-status"
+                            name="status"
+                            aria-required="true"
+                        >
+                            <option value="">Select status</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                            <option value="overdue">Overdue</option>
+                        </select>
+                        <label for="select-status">Status</label>
+                    </div>
+                </div>
 
-            <div>
-                <button type="button" id="add-task-btn" aria-label="Add task">
-                    Add Task
-                </button>
-            </div>
-        </form>
+                <!-- Add button -->
+                <div class="col-12">
+                    <button
+                        type="button"
+                        id="add-task-btn"
+                        class="btn btn-primary"
+                        aria-label="Add task"
+                    >
+                        Add Task
+                    </button>
+                </div>
+            </form>
+        </div>
 
         <!-- Task List Table -->
-        <h2>Filters</h2>
-        <table id="task-table" aria-label="Task List">
-            <thead>
-                <tr>
-                    <th>Task Name</th>
-                    <th>Category</th>
-                    <th>Status</th>
-                    <th>Deadline</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- JS will insert rows here -->
-            </tbody>
-        </table>
+        <div class="container">
+            <h2>Tasked</h2>
+            <table id="task-table" aria-label="Task List">
+                <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Deadline</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JS will insert rows here -->
+                </tbody>
+            </table>
+        </div>
 
         <!-- Filters -->
-        <div>
+        <div class="container">
+            <h3>Filter</h3>
             <label for="filter-category">Filter by Category</label>
             <select id="filter-category">
                 <option value="">All Categories</option>
