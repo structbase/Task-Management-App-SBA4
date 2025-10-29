@@ -84,3 +84,14 @@ function renderTasks() {
         });
     });
 }
+
+// Function to update overdue tasks
+function checkOverdue() {
+    const now = new Date();
+    tasks.forEach((task) => {
+        const taskDeadline = new Date(task.deadline);
+        if (taskDeadline < now && task.status !== "completed") {
+            task.status = "overdue";
+        }
+    });
+}
