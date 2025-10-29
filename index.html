@@ -19,11 +19,12 @@
             </h1>
 
             <!-- Center the form horizontally -->
-            <div class="d-flex justify-content-center align-items-center w-100">
+            <div class="d-flex justify-content-center align-items-center">
                 <form
                     id="task-form"
                     aria-labelledby="form-title"
                     class="row g-4"
+                    style="max-width: 80%"
                 >
                     <!-- Task name -->
                     <div class="col-md-6">
@@ -102,40 +103,90 @@
             </div>
         </div>
 
-        <!-- Task List Table -->
-        <div class="container" style="max-width: 85%">
-            <h2>Task Dashboard</h2>
-            <table class="table" id="task-table" aria-label="Task List">
-                <thead class="table-secondary table-bordered">
-                    <tr>
-                        <th>Task Name</th>
-                        <th>Category</th>
-                        <th>Status</th>
-                        <th>Deadline</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- JS will insert rows here -->
-                </tbody>
-            </table>
+        <!-- Task List Section -->
+        <div class="container mt-5" style="max-width: 75%">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div
+                    class="card-header bg-info text-black text-center rounded-top-4"
+                >
+                    <h2 class="mb-0">Task Dashboard</h2>
+                </div>
+                <div class="card-body p-4">
+                    <div class="table-responsive">
+                        <table
+                            class="table table-hover align-middle"
+                            id="task-table"
+                            aria-label="Task List"
+                        >
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Task Name</th>
+                                    <th>Category</th>
+                                    <th>Status</th>
+                                    <th>Deadline</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- JS will insert rows here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Filters -->
-        <div class="container">
-            <h3>Filter</h3>
-            <label for="filter-category">Filter by Category</label>
-            <select id="filter-category">
-                <option value="">All Categories</option>
-            </select>
+        <!-- Filters Section -->
+        <div
+            class="container mt-5 mb-2 d-flex justify-content-center"
+            style="max-width: 30%"
+        >
+            <div class="card border-0 shadow-sm rounded-4 w-100">
+                <div class="card-body p-4">
+                    <h3 class="mb-3 text-primary text-center">Filter Tasks</h3>
 
-            <label for="filter-status">Filter by Status</label>
-            <select id="filter-status">
-                <option value="">All Statuses</option>
-                <option value="in-progress">In Progress</option>
-                <option value="completed">Completed</option>
-                <option value="overdue">Overdue</option>
-            </select>
+                    <div
+                        class="row g-3 align-items-center justify-content-center"
+                    >
+                        <!-- Category filter -->
+                        <div class="col-md-5 text-center">
+                            <label
+                                for="filter-category"
+                                class="form-label fw-semibold"
+                            >
+                                Filter by Category
+                            </label>
+                            <select
+                                id="filter-category"
+                                class="form-select d-block mx-auto"
+                                style="max-width: 200px"
+                            >
+                                <option value="">All Categories</option>
+                            </select>
+                        </div>
+
+                        <!-- Status filter -->
+                        <div class="col-md-5 text-center">
+                            <label
+                                for="filter-status"
+                                class="form-label fw-semibold"
+                            >
+                                Filter by Status
+                            </label>
+                            <select
+                                id="filter-status"
+                                class="form-select d-block mx-auto"
+                                style="max-width: 200px"
+                            >
+                                <option value="">All Statuses</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="overdue">Overdue</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="./index.js"></script>

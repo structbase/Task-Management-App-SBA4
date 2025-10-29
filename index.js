@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${task.category}</td>
                 <td>
                     <select data-index="${index}" class="status-select">
-                        <option value="in-progress" ${
+                        <option class="in-progrss-wesdsds" value="in-progress" ${
                             task.status === "in-progress" ? "selected" : ""
                         }>In Progress</option>
                         <option value="completed" ${
