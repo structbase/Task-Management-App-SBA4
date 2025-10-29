@@ -34,6 +34,9 @@ addTaskBtn.addEventListener("click", () => {
     // Re-render table
     renderTasks();
 
+    // check overdue
+    checkOverdue();
+    
     // debug helps
     console.log("New task added:", task);
     console.log("All tasks:", tasks);
