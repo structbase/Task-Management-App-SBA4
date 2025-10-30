@@ -33,3 +33,34 @@ h3 {
     text-overflow: ellipsis;
     vertical-align: middle;
 }
+
+/* Transition of width */
+.taskListSection,
+.filterTaskSection {
+    transition: all 0.3s ease;
+}
+
+/* Media query  */
+@media (max-width: 750px) {
+    /* Task dashboard width */
+    .taskListSection {
+        max-width: 95% !important;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
+
+    /* Table scroll & text overflow handling */
+    .table-responsive {
+        overflow-x: auto;
+    }
+    #task-table,
+    #task-table th,
+    #task-table td {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+}
