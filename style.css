@@ -62,5 +62,22 @@ h3 {
         text-overflow: ellipsis;
     }
 
+    /* Filter card takes */
+    .filterTaskSection {
+        max-width: 90% !important; 
+        margin: 0 auto;
+        padding: 0 10px;
+    }
 
+    /* Stack filter selects vertically */
+    .filterTaskSection .row > .col-md-5 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Center selects and make them wider */
+    .filterTaskSection .form-select {
+        max-width: 100% !important;
+        margin: 0 auto 10px auto;
+    }
 }
