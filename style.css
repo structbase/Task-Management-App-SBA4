@@ -48,6 +48,10 @@ h3 {
         margin: 0 auto;
         padding: 0 10px;
     }
+    #task-table th:nth-child(1),
+    #task-table td:nth-child(1) {
+        width: 30%;
+    }
 
     /* Table scroll & text overflow handling */
     .table-responsive {
@@ -64,7 +68,7 @@ h3 {
 
     /* Filter card takes */
     .filterTaskSection {
-        max-width: 90% !important; 
+        max-width: 90% !important;
         margin: 0 auto;
         padding: 0 10px;
     }
