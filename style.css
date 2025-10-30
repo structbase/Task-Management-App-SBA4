@@ -13,3 +13,23 @@ h3 {
     font-size: 0.9rem;
     letter-spacing: 0.05em;
 }
+
+#task-table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* task-name column width */
+#task-table th:nth-child(1),
+#task-table td:nth-child(1) {
+    width: 55%;
+}
+
+/* stoping overflow primary on the task-name*/
+#task-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
