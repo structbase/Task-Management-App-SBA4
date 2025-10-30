@@ -42,6 +42,8 @@ The goal of this project was to build an interactive task management system wher
 
 **View the project live:**
 👉 [https://structbase.github.io/Task-Management-App-SBA4/](#)
+
+**Project Repo**
 👉 [https://github.com/structbase/Task-Management-App-SBA4](#)
 
 ---
